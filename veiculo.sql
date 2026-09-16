@@ -1,15 +1,15 @@
+create table categoria(
+idcategoria integer primary key,
+nome varchar(200) not null, 
+descricao varchar(500)
+);
+
 create table veiculos (
 placa char(8) primary key,
 chassi varchar(18) not null unique,
 ano integer not null, 
 cor varchar(100) not null, 
 idcategoria integer references categoria(idcategoria) not null
-);
-
-create table categoria(
-idcategoria integer primary key,
-nome varchar(200) not null, 
-descricao varchar(500)
 );
 
 -- Insira 5 registros em todas as tabelas do banco de dados
@@ -35,7 +35,7 @@ INSERT INTO veiculos VALUES
 ('YEN-5327', 'caAS89das89DY', 2012, 'Branco', 4);
 
 UPDATE veiculos SET ano = 2024, id_categoria = 3 WHERE placa = 'IFB-0098';
-UPDATE veiculos SET cor = 'Preto' WHERE placa = 'PAZ-0001'
+UPDATE veiculos SET cor = 'Preto' WHERE placa = 'PAZ-0001';
 
 UPDATE categoria SET nome = 'Caminhão' WHERE nome = 'Carga';
 UPDATE categoria SET descricao = 'Carros utilizados para passeio' WHERE nome = 'Passeio';
