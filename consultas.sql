@@ -68,3 +68,7 @@ WHERE CAST(crm AS VARCHAR) LIKE '1%' AND crm LIKE '%DF';
 
 -- e.
 
+-- f.
+SELECT medico.nome, paciente.nome, consulta.doenca, consulta.receita
+FROM medico INNER JOIN consulta ON medico.idmedico = consulta.idmedico
+INNER JOIN paciente ON paciente.idpaciente = consulta.idpaciente;
