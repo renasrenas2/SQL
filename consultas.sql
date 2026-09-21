@@ -49,11 +49,11 @@ VALUES
 
 -- 4.
 -- a.
-SELECT * FROM paciente;
+SELECT * FROM paciente
 ORDER BY nome;
 
 -- b.
-SELECT * FROM medico;
+SELECT * FROM medico
 WHERE especialidade = 'Clínica Geral'
 ORDER BY nome;
 
@@ -67,6 +67,9 @@ SELECT * FROM medico
 WHERE CAST(crm AS VARCHAR) LIKE '1%' AND crm LIKE '%DF';
 
 -- e.
+select paciente.nome from paciente
+inner join consulta on paciente.idpaciente = consulta.idpaciente
+where doenca = 'gripe';
 
 -- f.
 SELECT medico.nome, paciente.nome, consulta.doenca, consulta.receita
